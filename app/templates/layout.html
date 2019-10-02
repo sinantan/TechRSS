@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}  
+    
+     {% endblock %}</title>
+    
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">    
+</head>
+
+<body style="background-color:#F8F9FA;">
+
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">Tekno Feed</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+            <div class="row">
+            <div class="col-sm">
+              &nbsp;
+              &nbsp;
+              &nbsp;
+              &nbsp;
+              &nbsp;
+              &nbsp;
+            </div>
+            </div>
+        <a class="nav-item nav-link active" href="/settings">Hesap Ayarları <span class="sr-only">(current)</span></a>
+      </div>
+    </div>
+    <form class="form-inline my-2 my-lg-0" action="/logout">
+      <button class="btn btn-danger my-2 my-sm-0">Çıkış Yap</button>
+    </form>
+  </nav>
+        {% include "includes/alertmessage.html" %}
+        {% block body %}
+    
+
+        {% endblock %}
+   
+</body>
+
+  <footer class="text-muted" style="background-color:#F8F9FA;">
+          <div class="container" style="text-align:center;">
+            <p>Made ❤️ by <a href="https://github.com/sinantan">Sinan Tan</a></p>
+            <p>2019©</p>
+          </div>
+   </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}Tekno Feed - Ayarlar{% endblock %} 
+
+{% block body %}
+<main role="main">
+<br>
+<br>
+
+<!--akış ayarları formu-->
+<div class="container">
+
+  <h4>Akış Ayarları</h4>
+  <p>Akışlarını takip etmek istediğin siteleri aktif hale getir.</p>
+  <form class="form-inline" method="POST">
+    {% for i in range(all_websites|length) %}
+    {% if all_websites[i] in selected_websites %}
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" checked="checked" value="{{all_websites[i]}}" id="switch{{i}}" name="{{all_websites[i]}}">
+      <label class="custom-control-label" for="switch{{i}}">{{all_websites[i]}}</label>
+    </div>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    {% else %}
+     <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="switch{{i}}" value="{{all_websites[i]}}" name="{{all_websites[i]}}">
+      <label class="custom-control-label" for="switch{{i}}">{{all_websites[i]}}</label>
+    </div>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    {% endif %}
+    {% endfor %}
+  
+    <button type="submit" name="save_feed_settings" class="btn btn-success">Kaydet</button>
+  </form>
+</div>
+<!--akış ayarları formu BİTİŞ-->
+<br>
+<hr>
+<br>
+
+<!--hesap ayarları formu-->
+<div class="container">
+  <h4>Hesap Ayarları</h4>
+  <p>Parola ve e-postanı buradan değiştirebilirsin.</p>
+  <form class="form-inline" method="POST">
+    <!--parola değiştirme-->
+    <label class="mb-2 mr-sm-2">Eski Parola:</label>
+    <input type="password" class="form-control mb-2 mr-sm-2"  placeholder="Eski parola" name="oldpassword">
+    <label class="mb-2 mr-sm-2">Yeni Parola:</label>
+    <input type="password" class="form-control mb-2 mr-sm-2"  placeholder="Yeni parola" name="newpassword">
+   <button type="submit" name="save_password_settings" value="Kaydet" class="btn btn-success mb-2">Kaydet</button>
+    </form>
+    <!--parola değiştirme BİTİŞ-->
+    <br>
+   
+    
+    <!--eposta değiştirme-->
+    <form class="form-inline" method="POST">
+   <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">E-posta değiştir.</h6>
+        <div class="form-group">
+   <label class="mb-2 mr-sm-2">Mevcut E-posta: </label>
+    <input type="text" class="form-control mb-2 mr-sm-2"  placeholder="{{user_email}}" name="oldemail" disabled>
+    <label class="mb-2 mr-sm-2">Yeni E-posta:</label>
+    <input type="email" class="form-control mb-2 mr-sm-2"  placeholder="Yeni e-posta" name="newemail">
+   <button type="submit" name="save_email_settings" class="btn btn-warning mb-2">Aktivasyon kodu gönder.</button>
+       </div>
+      </div>
+    </div>
+    <!--eposta değiştirme BİTİŞ-->
+  </form>
+<!--hesap ayarları formu BİTİŞ-->
+
+</div>
+<br>
+<br>
+<br>
+<br>
+</main>
+{% endblock body %}
+
+
