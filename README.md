@@ -1,2 +1,2 @@
-# tekno-feed
-teknofeed is a rss feed reader of popular turkish technology blogs.
+# TechRSS
+TechRSS is a rss feed reader of popular turkish technology blogs.
