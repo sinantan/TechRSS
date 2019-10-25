@@ -29,6 +29,7 @@ class Feed(db.Model):  # ORM içindeki yapıdan todo tablomuzu türetiyoruz
 
 
 def user_register(username,email,password):
+    user_info = User.query.filter_by(email=email).first()
     hashed_password = sha256_crypt.encrypt(password)
     newUser=User(username = username, email = email,password=hashed_password)
     newUserFeed=Feed(username = username)
@@ -59,7 +60,11 @@ def user_login(email,password):
         if sha256_crypt.verify(password,real_password):
             session["logged_in"]=True
             session["username"] = user_info.username
-            return True
+            if True:
+                return True
+            else:
+                return "Hesap doğrula"
+            #return True
         else:
             return "Yanlış şifre"
     else:

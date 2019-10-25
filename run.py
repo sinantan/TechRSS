@@ -6,6 +6,7 @@ from datetime import datetime
 
 app = Flask(__name__,template_folder='app/templates')
 app.secret_key="rssfeed" #flash mesaj verebilmek için secret key oluşturmamız gerekiyor.
+app.security_password_salt="rssfeed2"
 
 basedir=os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir,'teknofeed.db')
